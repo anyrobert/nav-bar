@@ -5,15 +5,27 @@
 }
 
 body,
-main {
+main,
+article {
   height: calc(var(--vh, 1vh) * 100);
   margin: 0;
   background: #000;
 }
 
-main {
-  background-image: linear-gradient(to bottom, #fbd15d25 60%, rgb(0, 0, 0) 90%),
+.articles {
+  display: flex;
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+}
+
+article {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.2) 80%,
+      rgba(0, 0, 0, 1) 100%
+    ),
     url("./assets/photo-bg.avif");
+
   background-size: cover;
   background-position: center 0%;
   position: relative;
@@ -21,9 +33,21 @@ main {
   transition: transform;
   transition-timing-function: cubic-bezier(0.45, 0.02, 0.09, 0.98);
   transition-duration: 650ms;
+  scroll-snap-align: center;
+  width: 100vw;
+  flex-shrink: 0;
 }
 
-body[data-nav="true"] main {
+article:nth-child(2) {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.2) 80%,
+      rgba(0, 0, 0, 1) 100%
+    ),
+    url("./assets/photo-bg2.avif");
+}
+
+body[data-nav="true"] article {
   transform: translateY(-55%);
 }
 
