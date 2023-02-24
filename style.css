@@ -23,8 +23,8 @@ main {
   position: relative;
   z-index: 2;
   transition: transform;
-  transition-timing-function: cubic-bezier(0.13, 0.53, 0.38, 0.97);
-  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.45, 0.02, 0.09, 0.98);
+  transition-duration: 650ms;
 }
 
 body[data-nav="true"] main {
@@ -44,6 +44,10 @@ body:not([data-nav="true"]) #nav-toggle > i.open {
 body[data-nav="true"] #nav-toggle > i.close {
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
+}
+
+body[data-nav="true"] #nav-toggle {
+  background-color: #6337cd;
 }
 
 nav {
@@ -67,11 +71,10 @@ nav {
   gap: clamp(1rem, 2vw, 2rem);
   margin-top: clamp(2rem, 2vw, 3rem);
   padding: 0rem clamp(1rem, 2vw, 2rem);
-  transform: translate(-35%, 10%) scale(0.6);
-  opacity: 0;
-  transition: transform, opacity;
-  transition-timing-function: cubic-bezier(0.13, 0.53, 0.38, 0.97);
-  transition-duration: 800ms;
+  transform: translateY(50%) scale(0.6);
+  transition: transform;
+  transition-timing-function: cubic-bezier(0.45, 0.02, 0.09, 0.98);
+  transition-duration: 650ms;
 }
 
 #nav-links > .nav-link {
@@ -84,7 +87,7 @@ nav {
 }
 
 #nav-links > .nav-link > .nav-link-label {
-  color: white;
+  color: #cfcfe3;
   font-size: 1.25rem;
   margin: 0;
   text-transform: uppercase;
@@ -106,7 +109,7 @@ nav {
   left: 50%;
   bottom: 3rem;
   transform: translateX(-50%);
-  background-color: rgb(182, 142, 113);
+  background-color: #fbd05d;
   border: none;
   border-radius: 5rem;
   outline: none;
