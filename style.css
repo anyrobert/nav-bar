@@ -12,7 +12,12 @@ main {
 }
 
 main {
-  background-image: url("./assets/photo-bg.avif");
+  background-image: linear-gradient(
+      to bottom,
+      rgba(255, 246, 197, 0.4) 40%,
+      rgb(0, 0, 0) 90%
+    ),
+    url("./assets/photo-bg.avif");
   background-size: cover;
   background-position: center 0%;
   position: relative;
@@ -27,10 +32,11 @@ body[data-nav="true"] main {
 }
 
 body[data-nav="true"] #nav-links {
-  transform: translate(0%, 0%) scale(1);
+  transform: translateY(0%) scale(1);
+  opacity: 1;
 }
 
-body:not([data-nav="true"]) #nav-toggle:hover > i.open {
+body:not([data-nav="true"]) #nav-toggle > i.open {
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
 }
@@ -48,8 +54,8 @@ nav {
   bottom: 0px;
   z-index: 1;
   overflow-x: scroll;
+  scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch; /* Needed to work on iOS Safari */
 }
 
 .rubik-font {
@@ -61,8 +67,9 @@ nav {
   gap: clamp(1rem, 2vw, 2rem);
   margin-top: clamp(2rem, 2vw, 3rem);
   padding: 0rem clamp(1rem, 2vw, 2rem);
-  transform: translate(30%, 10%) scale(0.9);
-  transition: transform;
+  transform: translate(-35%, 10%) scale(0.6);
+  opacity: 0;
+  transition: transform, opacity;
   transition-timing-function: cubic-bezier(0.13, 0.53, 0.38, 0.97);
   transition-duration: 800ms;
 }
@@ -70,6 +77,10 @@ nav {
 #nav-links > .nav-link {
   text-decoration: none;
   scroll-snap-align: center;
+}
+
+#nav-links > .nav-link:last-child {
+  padding-right: clamp(1rem, 2vw, 2rem);
 }
 
 #nav-links > .nav-link > .nav-link-label {
