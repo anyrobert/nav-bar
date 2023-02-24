@@ -12,11 +12,7 @@ main {
 }
 
 main {
-  background-image: linear-gradient(
-      to bottom,
-      rgba(255, 246, 197, 0.4) 40%,
-      rgb(0, 0, 0) 90%
-    ),
+  background-image: linear-gradient(to bottom, #fbd15d25 60%, rgb(0, 0, 0) 90%),
     url("./assets/photo-bg.avif");
   background-size: cover;
   background-position: center 0%;
