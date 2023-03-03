@@ -10,6 +10,7 @@ article {
   height: calc(var(--vh, 1vh) * 100);
   margin: 0;
   background: #000;
+  overflow: hidden;
 }
 
 .articles {
@@ -74,12 +75,10 @@ nav {
   height: 50vh;
   width: 100%;
   position: absolute;
-  left: 0px;
   bottom: 0px;
   z-index: 1;
-  overflow-x: scroll;
   scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
+  transform: translateX(50%);
 }
 
 .rubik-font {
@@ -99,7 +98,6 @@ nav {
 
 #nav-links > .nav-link {
   text-decoration: none;
-  scroll-snap-align: center;
 }
 
 #nav-links > .nav-link:last-child {
@@ -114,11 +112,12 @@ nav {
 }
 
 #nav-links > .nav-link > .nav-link-image {
-  width: max(20vw, 300px);
-  aspect-ratio: 1.8 / 1;
   border-radius: 0.5rem;
   margin-top: 0.75rem;
+  width: max(20vw, 300px);
+  height: max(20vw, 300px);
   object-fit: cover;
+  object-position: 100% center;
 }
 
 #nav-toggle {
