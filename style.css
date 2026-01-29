@@ -107,8 +107,10 @@ nav {
 }
 
 #nav-links > .nav-link > .nav-link-label {
+  display: block;
   color: #cfcfe3;
   font-size: 1.25rem;
+  font-weight: bold;
   margin: 0;
   text-transform: uppercase;
 }
